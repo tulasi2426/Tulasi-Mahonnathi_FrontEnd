@@ -1,4 +1,5 @@
 #Explain what the simple List component does.
+
 The list component is a react component that renders a list of items.
 in the given code, we have two sub components of list - singleListItem and wrappedListComponent
 1.The SingleListItem component renders a single item in the list. It receives the isSelected,
@@ -14,6 +15,7 @@ in the given code, we have two sub components of list - singleListItem and wrapp
 
 
 #What problems / warnings are there with code?
+
 1.The usage of memo is incorrect for the SingleListItem and WrappedListComponent components.
  The memo function is used to memoize a component's output and optimize performance by
   preventing unnecessary re-renders. memo in this code is used with components that 
