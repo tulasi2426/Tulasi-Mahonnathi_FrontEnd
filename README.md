@@ -5,13 +5,7 @@ in the given code, we have two sub components of list - singleListItem and wrapp
 1.The SingleListItem component renders a single item in the list. It receives the isSelected,
  onClickHandler, text, and index props from the WrappedListComponent and returns a list item
   (<li> element) with a background color that depends on whether it is selected or not.
-2.The WrappedListComponent is the main component that receives an array of items as a prop.
- It maps over the items array and renders a SingleListItem component for each item. It 
- also manages the state of the selected item by using the useState hook to store the index 
- of the selected item in the selectedIndex variable. Whenever the items prop changes, 
- the useEffect hook is called to reset the selectedIndex state to null.
-  The handleClick function updates the selectedIndex state whenever a 
-  SingleListItem component is clicked.
+2.The WrappedListComponent is the main component that receives an array of items as a prop.It maps over the items array and renders a SingleListItem component for each item. It also manages the state of the selected item by using the useState hook to store the index of the selected item in the selectedIndex variable. Whenever the items prop changes,the useEffect hook is called to reset the selectedIndex state to null.The handleClick function updates the selectedIndex state whenever a SingleListItem component is clicked.
 
 
 #What problems / warnings are there with code?
@@ -35,6 +29,7 @@ in the given code, we have two sub components of list - singleListItem and wrapp
 
 
  #Please fix, optimize, and/or modify the component as much as you think is necessary
+ 
  List.js is the main react component.
  I am providing code here again to avoid confusions
 
