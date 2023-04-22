@@ -2,30 +2,20 @@
 
 The list component is a react component that renders a list of items.
 in the given code, we have two sub components of list - singleListItem and wrappedListComponent
-1.The SingleListItem component renders a single item in the list. It receives the isSelected,
- onClickHandler, text, and index props from the WrappedListComponent and returns a list item
-  (<li> element) with a background color that depends on whether it is selected or not.
+1.The SingleListItem component renders a single item in the list. It receives the isSelected onClickHandler, text, and index props from the WrappedListComponent and returns a list item (<li> element) with a background color that depends on whether it is selected or not.
+ 
 2.The WrappedListComponent is the main component that receives an array of items as a prop.It maps over the items array and renders a SingleListItem component for each item. It also manages the state of the selected item by using the useState hook to store the index of the selected item in the selectedIndex variable. Whenever the items prop changes,the useEffect hook is called to reset the selectedIndex state to null.The handleClick function updates the selectedIndex state whenever a SingleListItem component is clicked.
 
 
 #What problems / warnings are there with code?
 
-1.The usage of memo is incorrect for the SingleListItem and WrappedListComponent components.
- The memo function is used to memoize a component's output and optimize performance by
-  preventing unnecessary re-renders. memo in this code is used with components that 
-  have callback props (onClickHandler) and prop types that are functions, which can cause 
-  issues with memoization. memo should be used only with components that have no callback 
-  props and no prop types that are functions.
+1.The usage of memo is incorrect for the SingleListItem and WrappedListComponent components.The memo function is used to memoize a component's output and optimize performance by preventing unnecessary re-renders. memo in this code is used with components that have callback props (onClickHandler) and prop types that are functions, which can cause issues with memoization. memo should be used only with components that have no callback props and no prop types that are functions.
 
-2.The prop type declaration for items in WrappedListComponent is incorrect.
- PropTypes.array should be PropTypes.arrayOf() and the shape declaration should be PropTypes.
- shape() instead of PropTypes.shapeOf().
+2.The prop type declaration for items in WrappedListComponent is incorrect.PropTypes.array should be PropTypes.arrayOf() and the shape declaration should be PropTypes.shape() instead of PropTypes.shapeOf().
 
-3.The initial state value of selectedIndex in WrappedListComponent is not set properly. 
- It should have an initial value of null instead of not providing any initial value.
+3.The initial state value of selectedIndex in WrappedListComponent is not set properly.It should have an initial value of null instead of not providing any initial value.
 
-4.The onClickHandler prop in SingleListItem component is not being invoked properly. It should
- be wrapped in a function to prevent immediate invocation during rendering.
+4.The onClickHandler prop in SingleListItem component is not being invoked properly. It should be wrapped in a function to prevent immediate invocation during rendering.
 
 
  #Please fix, optimize, and/or modify the component as much as you think is necessary
