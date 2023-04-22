@@ -1,13 +1,13 @@
-#Explain what the simple List component does.
+###Explain what the simple List component does.
 
 The list component is a react component that renders a list of items.
 in the given code, we have two sub components of list - singleListItem and wrappedListComponent
-1.The SingleListItem component renders a single item in the list. It receives the isSelected onClickHandler, text, and index props from the WrappedListComponent and returns a list item (<li> element) with a background color that depends on whether it is selected or not.
+1.The SingleListItem component renders a single item in the list. It receives the isSelected onClickHandler, text, and index props from the WrappedListComponent and returns a list item with a background color that depends on whether it is selected or not.
  
 2.The WrappedListComponent is the main component that receives an array of items as a prop.It maps over the items array and renders a SingleListItem component for each item. It also manages the state of the selected item by using the useState hook to store the index of the selected item in the selectedIndex variable. Whenever the items prop changes,the useEffect hook is called to reset the selectedIndex state to null.The handleClick function updates the selectedIndex state whenever a SingleListItem component is clicked.
 
 
-#What problems / warnings are there with code?
+###What problems / warnings are there with code?
 
 1.The usage of memo is incorrect for the SingleListItem and WrappedListComponent components.The memo function is used to memoize a component's output and optimize performance by preventing unnecessary re-renders. memo in this code is used with components that have callback props (onClickHandler) and prop types that are functions, which can cause issues with memoization. memo should be used only with components that have no callback props and no prop types that are functions.
 
@@ -18,7 +18,7 @@ in the given code, we have two sub components of list - singleListItem and wrapp
 4.The onClickHandler prop in SingleListItem component is not being invoked properly. It should be wrapped in a function to prevent immediate invocation during rendering.
 
 
- #Please fix, optimize, and/or modify the component as much as you think is necessary
+ ###Please fix, optimize, and/or modify the component as much as you think is necessary
  
  List.js is the main react component.
  I am providing code here again to avoid confusions
